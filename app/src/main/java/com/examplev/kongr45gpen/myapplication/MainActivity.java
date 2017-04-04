@@ -5,7 +5,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (pressed) {
                 buttonPressed = true;
-                button.setText("App Wars (again)");
+                text.setText("App Wars (again)");
             }
         }
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                // ???
             }
         });
 
@@ -100,10 +99,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-
-        Log.e(TAG, "Save instance state");
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
 
         outState.putBoolean("button_pressed", buttonPressed);
     }
