@@ -14,12 +14,13 @@ public class YesNameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yes_name);
 
-
-        Log.e(TAG, "Welcome to YesNameActivity!");
+        // Add a [d]ebug log message
+        Log.d(TAG, "Welcome to YesNameActivity!");
 
         SeekBar bar = (SeekBar) findViewById(R.id.seekBar);
         final TextView textView = (TextView) findViewById(R.id.textView);
 
+        // Set a listener with a method that's called whenever the seekbar position changes
         bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -40,6 +41,9 @@ public class YesNameActivity extends AppCompatActivity {
                     textView.setText("Thank you for participating!");
                 }
             }
+
+            // We dont' want anything to happen when the user starts or stops touching the seekbar,
+            // so the following methods are empty.
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
