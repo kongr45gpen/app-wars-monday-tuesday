@@ -12,3 +12,4 @@
 ## Useful links
 - https://developer.android.com/
 - https://material.io/
+- https://github.com/aritraroy/UltimateAndroidReference
